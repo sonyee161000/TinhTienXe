@@ -68,67 +68,70 @@ import Foundation
 //}
 //giatien(hangXe: "vinasun", loaiXe: "VNS 7 chỗ", totalKm:  0.5)
 
-func tinhTienCuoc(hangXe: CarCompany, dichVu: Service, soKm: Double) {
-    var giaMoCua: Double = 0
-    var kmMoCua: Double = 0
-    var giaKmTiepTheo: Double = 0
-    var giaKmThuN :Double = 0
-    var kmThuN: Double = 0
-    
-    switch hangXe {
-    case .MAI_LINH:
-        giaMoCua = 20000
-        kmMoCua = 1.28
-        kmThuN = 31
-        switch dichVu {
-        case .XE_4_NHO:
-            giaKmTiepTheo = 14500
-            giaKmThuN = 12000
-        case .XE_4_LON:
-            giaKmTiepTheo = 16000
-            giaKmThuN = 12700
-        case .XE_7:
-            giaKmTiepTheo = 17000
-            giaKmThuN = 14300
-        default:
-            break
-        }
-    case .VINA_SUN:
-        kmThuN = 31
-        kmMoCua = 0.5
-        switch dichVu {
-        case .XE_4_LON:
-            giaMoCua = 11500
-            giaKmTiepTheo = 17600
-            giaKmThuN = 14500
-        case .XE_7:
-            giaMoCua = 12000
-            giaKmTiepTheo = 19600
-            giaKmThuN = 17100
-        default:
-            break
-        }
-    case .VINA_TAXI:
-        print()
-    case .GROUP:
-        print()
-    case .G7:
-        print()
-    }
-    
-    var tienCuoc: Double = 0
-    if soKm <= 0 {
-        tienCuoc = 0
-    } else if soKm <= kmMoCua {
-        tienCuoc = giaMoCua
-    } else if soKm > kmMoCua && soKm < kmThuN {
-        tienCuoc = giaMoCua + giaKmTiepTheo * (soKm - kmMoCua)
-    } else {
-        tienCuoc = giaMoCua + giaKmTiepTheo * (soKm - kmMoCua) + giaKmThuN * (soKm - kmThuN -1)
-//         33= 20000 + 14500(33-1.28) + 12000(33-31-1)??????
-    }
-    
-    print("tiền cước của chuyến xe \(hangXe.rawValue), \(dichVu.rawValue) là \(tienCuoc)")
-}
 
-tinhTienCuoc(hangXe: .MAI_LINH, dichVu: .XE_4_NHO, soKm: 1)
+//func tinhTienCuoc(hangXe: CarCompany, dichVu: Service, soKm: Double) {
+//    var giaMoCua: Double = 0
+//    var kmMoCua: Double = 0
+//    var giaKmTiepTheo: Double = 0
+//    var giaKmThuN :Double = 0
+//    var kmThuN: Double = 0
+//
+//    switch hangXe {
+//    case .MAI_LINH:
+//        giaMoCua = 20000
+//        kmMoCua = 1.28
+//        kmThuN = 31
+//        switch dichVu {
+//        case .XE_4_NHO:
+//            giaKmTiepTheo = 14500
+//            giaKmThuN = 12000
+//        case .XE_4_LON:
+//            giaKmTiepTheo = 16000
+//            giaKmThuN = 12700
+//        case .XE_7:
+//            giaKmTiepTheo = 17000
+//            giaKmThuN = 14300
+//        default:
+//            break
+//        }
+//    case .VINA_SUN:
+//        kmThuN = 31
+//        kmMoCua = 0.5
+//        switch dichVu {
+//        case .XE_4_LON:
+//            giaMoCua = 11500
+//            giaKmTiepTheo = 17600
+//            giaKmThuN = 14500
+//        case .XE_7:
+//            giaMoCua = 12000
+//            giaKmTiepTheo = 19600
+//            giaKmThuN = 17100
+//        default:
+//            break
+//        }
+//    case .VINA_TAXI:
+//        print()
+//    case .GROUP:
+//        print()
+//    case .G7:
+//        print()
+//    }
+//
+//    var tienCuoc: Double = 0
+//    if soKm <= 0 {
+//        tienCuoc = 0
+//    } else if soKm <= kmMoCua {
+//        tienCuoc = giaMoCua
+//    } else if soKm > kmMoCua && soKm < kmThuN {
+//        tienCuoc = giaMoCua + giaKmTiepTheo * (soKm - kmMoCua)
+//    } else {
+//        tienCuoc = giaMoCua + giaKmTiepTheo * (soKm - kmMoCua) + giaKmThuN * (soKm - kmThuN -1)
+////         33= 20000 + 14500(33-1.28) + 12000(33-31-1)??????
+//    }
+//
+//    print("tiền cước của chuyến xe \(hangXe.rawValue), \(dichVu.rawValue) là \(tienCuoc)")
+//}
+//
+//tinhTienCuoc(hangXe: .MAI_LINH, dichVu: .XE_4_NHO, soKm: 1)
+
+kiemTraMang()
